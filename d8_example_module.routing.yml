@@ -13,3 +13,11 @@ d8_example_module.test_page_with_theme:
     _title: 'Test Page With Theme!'
   requirements:
     _permission: 'access content'
+
+d8_example_module.test_form:
+  path: /admin/config/system/test-form
+  defaults:
+    _form: 'Drupal\d8_example_module\Form\TestForm'
+    _title: 'Test Form'
+  requirements:
+    _permission: 'configure_form'

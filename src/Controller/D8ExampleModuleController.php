@@ -22,5 +22,4 @@ class D8ExampleModuleController extends ControllerBase {
       '#to' => $to,
     ];
   }
-
 }
