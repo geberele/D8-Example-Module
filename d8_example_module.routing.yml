@@ -1,0 +1,15 @@
+d8_example_module.test_page:
+  path: '/test-page/{from}/{to}'
+  defaults:
+    _content: 'Drupal\d8_example_module\Controller\D8ExampleModuleController::test_page'
+    _title: 'Test Page!'
+  requirements:
+    _permission: 'access content'
+
+d8_example_module.test_page_with_theme:
+  path: '/test-page-2/{from}/{to}'
+  defaults:
+    _content: 'Drupal\d8_example_module\Controller\D8ExampleModuleController::test_page_with_theme'
+    _title: 'Test Page With Theme!'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,5 @@
+name: D8 Test Module
+description: D8 Test Module
+type: module
+core: 8.x
+package: Custom

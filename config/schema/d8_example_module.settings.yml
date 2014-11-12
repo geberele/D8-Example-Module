@@ -1,0 +1,7 @@
+d8_example_module.settings:
+  type: mapping
+  label: 'D8 Example Module settings'
+  mapping:
+    default_count:
+      type: integer
+      label: 'Default count'

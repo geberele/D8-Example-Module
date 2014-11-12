@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function d8_example_module_theme() {
+  $theme['d8_example_module_page_theme'] = [
+    'variables' => ['from' => NULL, 'to' => NULL],
+    'template' => 'd8-theme-page',
+  ];
+
+  return $theme;
+}
