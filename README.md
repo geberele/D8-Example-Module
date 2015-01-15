@@ -34,18 +34,18 @@ Start creating a controller extending the ControllerBase class and return the ou
           '%to' => $to,
         ]);
   
-        return $message;
+        return ['#markup' => $message];
       }
     }
 
-Once this is done, within the .routing.yml file we can define the path, the content, the title and the permissions:
+Once this is done, within the .routing.yml file we can define the path, the controller, the title and the permissions:
 
 **/modules/d8_example_module/d8_example_module.routing.yml**
 
     d8_example_module.test_page:
       path: '/test-page/{from}/{to}'
       defaults:
-        _content: 'Drupal\d8_example_module\Controller\D8ExampleModuleController::test_page'
+        _controller: 'Drupal\d8_example_module\Controller\D8ExampleModuleController::test_page'
         _title: 'Test Page!'
       requirements:
         _permission: 'access content'
@@ -146,14 +146,14 @@ To create a form we extend a ConfigFormBase class:
       }
     
       public function submitForm(array &$form, FormStateInterface $form_state) {
-        parent::submitForm($form, $form_state);
         $config = $this->config('d8_example_module.settings');
         $config->set('default_count', $form_state->getValue('default_count'));
         $config->save();
+        parent::submitForm($form, $form_state);
       }
     }
 
-Then within the .routing.yml file we can define the path, the content, the title and the permissions:
+Then within the .routing.yml file we can define the path, the form, the title and the permissions:
 
 **/modules/d8_example_module/d8_example_module.routing.yml**
 
@@ -308,3 +308,30 @@ The structure of a module should look like the example module **d8_example_modul
 
 
 **Drupal 8 in 2 steps: Extend a base Class or implement an Interface and tell Drupal about it.**
+
+# Testing the Module
+
+There are a number of things you need to do and this is easily done with a browser that support "private" browsing as this simplifies testing. There are a few things to test:
+
+* controller based test page
+* themed test page
+* the block
+* the block's configuration
+* new permission
+* the config form
+
+This can be easily achived with the following steps:
+
+* Private Sesssion
+  * browse to localhost/test-page/London/Paris
+  * browse to localhost/test-page-2/London/Paris
+  * browse to localhost/admin/config/system/test-form (access denied)
+* Normal session, logged in as administrator
+  * add the block, Test Block
+  * confirm it displays
+  * change the block configuration and clear the "Configuration enabled" check box
+  * confirm the block display has changed
+  * change the permissions so that "Anonymous user" has "Access to Test Form"
+* Private Session
+  * browse to localhost/admin/config/system/test-form
+  * change the value on the config form, check it saves correctly
