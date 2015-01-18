@@ -72,9 +72,9 @@ For the template page Drupal 8 uses **Twig**, a [third-party template language](
 **/modules/d8_example_module/template/d8-theme-page.html.twig**
 
     <section>
-      {% raw %}{% trans %}{% endraw %}
-        <strong>{% raw %}{{ from }}{% endraw %}</strong> to <em>{% raw %}{{ to }}{% endraw %}</em>
-      {% raw %}{% endtrans %}{% endraw %}
+      {% trans %}
+        <strong>{{ from }}</strong> to <em>{{ to }}</em>
+      {% endtrans %}
     </section>
 
 And then we assign the theme to the page:
