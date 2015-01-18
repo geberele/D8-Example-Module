@@ -261,35 +261,35 @@ Here is an example of a more complex block:
 ##Structure of a module
 The structure of a module should look like the example module **d8_example_module**:
 
-    d8_example_module
+    d8_example_module/
      |
-     |- config
+     |- config/
        |
-       |- install
+       |- install/
          |
          |- d8_example_module.setting.yaml
        |
-       |- schema
+       |- schema/
          |
          |- d8_example_module.settings.yaml
      |
-     |- src
+     |- src/
        |
-       |- Controller
+       |- Controller/
          |
          |- D8ExampleModuleController.php
        |
-       |- Form
+       |- Form/
          |
          |- TestForm.php
        |
-       |- Plugin
+       |- Plugin/
          |
-         |- Block
+         |- Block/
            |
            |- TestBlock.php
      |
-     |- templates
+     |- templates/
        |
        |- d8-theme-page.html.twig
      |
