@@ -264,44 +264,44 @@ The structure of a module should look like the example module **d8_example_modul
     d8_example_module
      |
      |- config
+       |
+       |- install
          |
-         |- install
+         |- d8_example_module.setting.yaml
+       |
+       |- schema
+         |
+         |- d8_example_module.settings.yaml
+     |
+     |- src
+       |
+       |- Controller
+         |
+         |- D8ExampleModuleController.php
+       |
+       |- Form
+         |
+         |- TestForm.php
+       |
+       |- Plugin
+         |
+         |- Block
            |
-           |- d8_example_module.setting.yaml
-         |
-         |- schema
-           |
-           |- d8_example_module.settings.yaml
-      |
-      |- src
-        |
-        |- Controller
-          |
-          |- D8ExampleModuleController.php
-        |
-        |- Form
-          |
-          |- TestForm.php
-        |
-        |- Plugin
-          |
-          |- Block
-            |
-            |- TestBlock.php
-      |
-      |- templates
-         |
-         |- d8-theme-page.html.twig
+           |- TestBlock.php
+     |
+     |- templates
        |
-       |- d8_example_module.info.yml
-       |
-       |- d8_example_module.links.menu.yml
-       |
-       |- d8_example_module.module
-       |
-       |- d8_example_module.permissions.yml
-       |
-       |- d8_example_module.routing.yml
+       |- d8-theme-page.html.twig
+     |
+     |- d8_example_module.info.yml
+     |
+     |- d8_example_module.links.menu.yml
+     |
+     |- d8_example_module.module
+     |
+     |- d8_example_module.permissions.yml
+     |
+     |- d8_example_module.routing.yml
 
 **Drupal 8 in 2 steps: Extend a base Class or implement an Interface and tell Drupal about it.**
 
