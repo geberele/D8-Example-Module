@@ -12,7 +12,7 @@ class D8ExampleModuleController extends ControllerBase {
       '%to' => $to,
     ]);
 
-    return $message;
+    return ['#markup' => $message];
   }
 
   public function test_page_with_theme($from, $to) {
