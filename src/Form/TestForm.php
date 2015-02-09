@@ -6,6 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 class TestForm extends ConfigFormBase {
+
   public function getFormId() {
     return 'test_form';
   }
@@ -27,4 +28,9 @@ class TestForm extends ConfigFormBase {
     $config->save();
     parent::submitForm($form, $form_state);
   }
+
+  protected function getEditableConfigNames() {
+    return ['d8_example_module.settings'];
+  }
+
 }

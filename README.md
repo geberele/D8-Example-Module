@@ -149,6 +149,10 @@ To create a form we extend a ConfigFormBase class:
         $config->save();
         parent::submitForm($form, $form_state);
       }
+
+      protected function getEditableConfigNames() {
+        return ['d8_example_module.settings'];
+      }
     }
 
 Then within the .routing.yml file we can define the path, the form, the title and the permissions:
